@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		030F0BDD1CF27F2E3023053B883AABB0 /* PhoneNumberKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C75EF053F905A8B5FD5DD90EB04E7C42 /* PhoneNumberKit-dummy.m */; };
+		12FE949353A4F5EEAFF43AB5CD9106C0 /* MetadataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C40B2B6916993C4EA8A6F0132300C7 /* MetadataManager.swift */; };
+		17167C311A45DDEEA06323B986406B5E /* PhoneNumberKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D28E67EE63DAE56B7B3C37AB4420F /* PhoneNumberKit.swift */; };
+		1EA0B9D7ADC37A73E0D8FD62E3938624 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79413ADD67D62E0F4C201C1B25599273 /* ParseManager.swift */; };
+		22F1D67B792E7C5C85D99C85A43B21BB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AD1AF5CB8F51DD75EBD1A7C0C3CCB4 /* CoreTelephony.framework */; };
+		277F77965CC48142F729762B6F4322F8 /* RegexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EE67C0EEC254CFDDE546995E83E96 /* RegexManager.swift */; };
+		2925CB7303D2DF99172D37E2E6606CB5 /* MetadataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D366DEA7AA10ED463AA074E4D8EDA /* MetadataTypes.swift */; };
+		2C86F4F4510AF38D80277349BA2D5FEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B61007FE2D374113C99DE1B5AF43BE /* Constants.swift */; };
+		3B58EBD8C305279F63C66AB77D1BE626 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C5517433AF38118132E4B2DF9500E1 /* Foundation.framework */; };
+		3CB048384C3AC927BB7A650762D55D8F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB15EDEB946126260F120BAB673701 /* PhoneNumber.swift */; };
+		51EF883340A0C8FC330F91BBC55BFE0D /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F017A60FECE75DB34AD88203293A4 /* Formatter.swift */; };
+		5320BA6E49DB015F6F2E7CE74E386D6D /* Pods-Wallet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AEE362CF6FCAAF24379DFCFBFDBC55 /* Pods-Wallet-dummy.m */; };
+		68C3AAB2DA71133A322B5E94D33D5346 /* PhoneNumberMetadata.json in Resources */ = {isa = PBXBuildFile; fileRef = C6120E347519D4F27E5A40A96B685513 /* PhoneNumberMetadata.json */; };
+		75092DB75627A250D4F73293F09173BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C5517433AF38118132E4B2DF9500E1 /* Foundation.framework */; };
+		7E56FD76BB4ACCF90393254856A2EB0E /* Pods-Wallet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A92D990160013576CA7A66D234F9594 /* Pods-Wallet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F7CCA3E406C83FBB5A616981B47A052 /* NSRegularExpression+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EC072206BC6D737F715A62076858F /* NSRegularExpression+Swift.swift */; };
+		A2E71A2BCB90DFA37DF7A263BEF63FDB /* PhoneNumberKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28A8DD9AF8F328BEE3D8EF6134E92AA7 /* PhoneNumberKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2FFAD8FE6A324353976477198DC8E39 /* PartialFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA7BDC6DAE16C3565F546C38539BF3 /* PartialFormatter.swift */; };
+		C5B2932C69336A8A391CB20E3774CF02 /* MetadataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C342E10D50B2D8CC9525E69B31BCD583 /* MetadataParsing.swift */; };
+		E53CED6EA79D39D54B32FD93816A4571 /* PhoneNumberParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087E48791464EDD43D6D6C0B008C208 /* PhoneNumberParser.swift */; };
+		FFB66C8E07C73B667E7C6514D52F95E6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9151795153958F88AA7F3EF19692E897 /* TextField.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		660525A5D4FE8B9555EF0715A24D050C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C942A9CCE5CF382E8053D9757DA6249D;
+			remoteInfo = PhoneNumberKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08CB15EDEB946126260F120BAB673701 /* PhoneNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneNumber.swift; path = PhoneNumberKit/PhoneNumber.swift; sourceTree = "<group>"; };
+		185EE67C0EEC254CFDDE546995E83E96 /* RegexManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegexManager.swift; path = PhoneNumberKit/RegexManager.swift; sourceTree = "<group>"; };
+		1A92D990160013576CA7A66D234F9594 /* Pods-Wallet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Wallet-umbrella.h"; sourceTree = "<group>"; };
+		23D39A0966C96CD6A7DD7851ECDB6CF0 /* Pods-Wallet-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Wallet-acknowledgements.markdown"; sourceTree = "<group>"; };
+		28A8DD9AF8F328BEE3D8EF6134E92AA7 /* PhoneNumberKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhoneNumberKit-umbrella.h"; sourceTree = "<group>"; };
+		2B0D28E67EE63DAE56B7B3C37AB4420F /* PhoneNumberKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneNumberKit.swift; path = PhoneNumberKit/PhoneNumberKit.swift; sourceTree = "<group>"; };
+		31C40B2B6916993C4EA8A6F0132300C7 /* MetadataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetadataManager.swift; path = PhoneNumberKit/MetadataManager.swift; sourceTree = "<group>"; };
+		32F64BC0D4DD98AB99AD25D10CC09D19 /* Pods-Wallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wallet.release.xcconfig"; sourceTree = "<group>"; };
+		3A7EC072206BC6D737F715A62076858F /* NSRegularExpression+Swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSRegularExpression+Swift.swift"; path = "PhoneNumberKit/NSRegularExpression+Swift.swift"; sourceTree = "<group>"; };
+		522422F23BBB14613A5261CC1723971F /* PhoneNumberKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PhoneNumberKit.xcconfig; sourceTree = "<group>"; };
+		58C5517433AF38118132E4B2DF9500E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5A7300CAE370B4F20A344E66F5283F15 /* Pods-Wallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wallet.debug.xcconfig"; sourceTree = "<group>"; };
+		63B61007FE2D374113C99DE1B5AF43BE /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = PhoneNumberKit/Constants.swift; sourceTree = "<group>"; };
+		64DA7BDC6DAE16C3565F546C38539BF3 /* PartialFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PartialFormatter.swift; path = PhoneNumberKit/PartialFormatter.swift; sourceTree = "<group>"; };
+		69681285C13FB58876DD5727BCB2DC85 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PhoneNumberKit.framework; path = PhoneNumberKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77AD1AF5CB8F51DD75EBD1A7C0C3CCB4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		79413ADD67D62E0F4C201C1B25599273 /* ParseManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParseManager.swift; path = PhoneNumberKit/ParseManager.swift; sourceTree = "<group>"; };
+		8A89E02A9D5716A8864BD7B7EAB767C1 /* PhoneNumberKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhoneNumberKit-prefix.pch"; sourceTree = "<group>"; };
+		8C9D366DEA7AA10ED463AA074E4D8EDA /* MetadataTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetadataTypes.swift; path = PhoneNumberKit/MetadataTypes.swift; sourceTree = "<group>"; };
+		9151795153958F88AA7F3EF19692E897 /* TextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = PhoneNumberKit/UI/TextField.swift; sourceTree = "<group>"; };
+		9BEC74B9104A235C547DAEA34C89968B /* Pods-Wallet-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wallet-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D4C7094EDEC54DCA0C7A7A439BAAD5F /* PhoneNumberKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PhoneNumberKit.modulemap; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A13F017A60FECE75DB34AD88203293A4 /* Formatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formatter.swift; path = PhoneNumberKit/Formatter.swift; sourceTree = "<group>"; };
+		ADD8F2035484937C5A8C5FD886EBFDAD /* Pods-Wallet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wallet-Info.plist"; sourceTree = "<group>"; };
+		C191D2D6BBC8D76596F21C64CB73C290 /* Pods-Wallet-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wallet-frameworks.sh"; sourceTree = "<group>"; };
+		C342E10D50B2D8CC9525E69B31BCD583 /* MetadataParsing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetadataParsing.swift; path = PhoneNumberKit/MetadataParsing.swift; sourceTree = "<group>"; };
+		C59A75D6390D49A77EFA467590ABFF69 /* PhoneNumberKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PhoneNumberKit-Info.plist"; sourceTree = "<group>"; };
+		C6120E347519D4F27E5A40A96B685513 /* PhoneNumberMetadata.json */ = {isa = PBXFileReference; includeInIndex = 1; name = PhoneNumberMetadata.json; path = PhoneNumberKit/Resources/PhoneNumberMetadata.json; sourceTree = "<group>"; };
+		C75EF053F905A8B5FD5DD90EB04E7C42 /* PhoneNumberKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PhoneNumberKit-dummy.m"; sourceTree = "<group>"; };
+		D087E48791464EDD43D6D6C0B008C208 /* PhoneNumberParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneNumberParser.swift; path = PhoneNumberKit/PhoneNumberParser.swift; sourceTree = "<group>"; };
+		EB576E7C1A28A1C3E9690D7BFDFA3809 /* Pods_Wallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Wallet.framework; path = "Pods-Wallet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F24A714CA1FCC7665C22C902902A3567 /* Pods-Wallet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Wallet.modulemap"; sourceTree = "<group>"; };
+		F2AEE362CF6FCAAF24379DFCFBFDBC55 /* Pods-Wallet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Wallet-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05CA58A45C11A4B2B1197EAE0BDACADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F1D67B792E7C5C85D99C85A43B21BB /* CoreTelephony.framework in Frameworks */,
+				75092DB75627A250D4F73293F09173BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E852D119C079685486D2DFD328D674F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B58EBD8C305279F63C66AB77D1BE626 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB3A0195A86848DF4EF061857039C1EA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		387BE0818D00657A18A246E55CCD51C6 /* Pods-Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				F24A714CA1FCC7665C22C902902A3567 /* Pods-Wallet.modulemap */,
+				23D39A0966C96CD6A7DD7851ECDB6CF0 /* Pods-Wallet-acknowledgements.markdown */,
+				9BEC74B9104A235C547DAEA34C89968B /* Pods-Wallet-acknowledgements.plist */,
+				F2AEE362CF6FCAAF24379DFCFBFDBC55 /* Pods-Wallet-dummy.m */,
+				C191D2D6BBC8D76596F21C64CB73C290 /* Pods-Wallet-frameworks.sh */,
+				ADD8F2035484937C5A8C5FD886EBFDAD /* Pods-Wallet-Info.plist */,
+				1A92D990160013576CA7A66D234F9594 /* Pods-Wallet-umbrella.h */,
+				5A7300CAE370B4F20A344E66F5283F15 /* Pods-Wallet.debug.xcconfig */,
+				32F64BC0D4DD98AB99AD25D10CC09D19 /* Pods-Wallet.release.xcconfig */,
+			);
+			name = "Pods-Wallet";
+			path = "Target Support Files/Pods-Wallet";
+			sourceTree = "<group>";
+		};
+		7F1814FB0372DC8143305A7E9476FFDE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				387BE0818D00657A18A246E55CCD51C6 /* Pods-Wallet */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8D84CC5C5DE4101432AE456838A933AD /* PhoneNumberKit */ = {
+			isa = PBXGroup;
+			children = (
+				F9A71EFAFB85CC7BD2B599462C787629 /* PhoneNumberKitCore */,
+				CA76B537595FBC2F2831293CA0D85D36 /* Support Files */,
+				A8A4365A16915FE5070B17E1304CA1A2 /* UIKit */,
+			);
+			name = PhoneNumberKit;
+			path = PhoneNumberKit;
+			sourceTree = "<group>";
+		};
+		A8A4365A16915FE5070B17E1304CA1A2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9151795153958F88AA7F3EF19692E897 /* TextField.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		B26CE67B1A8E08FBD8976FC8E8FF5E95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69681285C13FB58876DD5727BCB2DC85 /* PhoneNumberKit.framework */,
+				EB576E7C1A28A1C3E9690D7BFDFA3809 /* Pods_Wallet.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C03A740999EB6C81DC6DF71B75B71D43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D84CC5C5DE4101432AE456838A933AD /* PhoneNumberKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA76B537595FBC2F2831293CA0D85D36 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D4C7094EDEC54DCA0C7A7A439BAAD5F /* PhoneNumberKit.modulemap */,
+				522422F23BBB14613A5261CC1723971F /* PhoneNumberKit.xcconfig */,
+				C75EF053F905A8B5FD5DD90EB04E7C42 /* PhoneNumberKit-dummy.m */,
+				C59A75D6390D49A77EFA467590ABFF69 /* PhoneNumberKit-Info.plist */,
+				8A89E02A9D5716A8864BD7B7EAB767C1 /* PhoneNumberKit-prefix.pch */,
+				28A8DD9AF8F328BEE3D8EF6134E92AA7 /* PhoneNumberKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PhoneNumberKit";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				C03A740999EB6C81DC6DF71B75B71D43 /* Pods */,
+				B26CE67B1A8E08FBD8976FC8E8FF5E95 /* Products */,
+				7F1814FB0372DC8143305A7E9476FFDE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		EB3A0195A86848DF4EF061857039C1EA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				77AD1AF5CB8F51DD75EBD1A7C0C3CCB4 /* CoreTelephony.framework */,
+				58C5517433AF38118132E4B2DF9500E1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EE992CAA36665921F5BC316583BB83C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6120E347519D4F27E5A40A96B685513 /* PhoneNumberMetadata.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F9A71EFAFB85CC7BD2B599462C787629 /* PhoneNumberKitCore */ = {
+			isa = PBXGroup;
+			children = (
+				63B61007FE2D374113C99DE1B5AF43BE /* Constants.swift */,
+				A13F017A60FECE75DB34AD88203293A4 /* Formatter.swift */,
+				31C40B2B6916993C4EA8A6F0132300C7 /* MetadataManager.swift */,
+				C342E10D50B2D8CC9525E69B31BCD583 /* MetadataParsing.swift */,
+				8C9D366DEA7AA10ED463AA074E4D8EDA /* MetadataTypes.swift */,
+				3A7EC072206BC6D737F715A62076858F /* NSRegularExpression+Swift.swift */,
+				79413ADD67D62E0F4C201C1B25599273 /* ParseManager.swift */,
+				64DA7BDC6DAE16C3565F546C38539BF3 /* PartialFormatter.swift */,
+				08CB15EDEB946126260F120BAB673701 /* PhoneNumber.swift */,
+				2B0D28E67EE63DAE56B7B3C37AB4420F /* PhoneNumberKit.swift */,
+				D087E48791464EDD43D6D6C0B008C208 /* PhoneNumberParser.swift */,
+				185EE67C0EEC254CFDDE546995E83E96 /* RegexManager.swift */,
+				EE992CAA36665921F5BC316583BB83C9 /* Resources */,
+			);
+			name = PhoneNumberKitCore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5FB7EA37DE71B30B9EB9137098FE3FA5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E56FD76BB4ACCF90393254856A2EB0E /* Pods-Wallet-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AF8DD4F304DA13F0445DFAD6F7DE47A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E71A2BCB90DFA37DF7A263BEF63FDB /* PhoneNumberKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C3D3F5A2C0FBD8B39D3FDB7771CB7757 /* Pods-Wallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC19558448E7A0CEBC6C3000BBBC5EF8 /* Build configuration list for PBXNativeTarget "Pods-Wallet" */;
+			buildPhases = (
+				5FB7EA37DE71B30B9EB9137098FE3FA5 /* Headers */,
+				025BE530E180558BACEF1A7385B444E9 /* Sources */,
+				9E852D119C079685486D2DFD328D674F /* Frameworks */,
+				B7A9F975BC496EF9CB814C975FF7CD6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C20292BC2D960AAA0438C4C77AF7C2A /* PBXTargetDependency */,
+			);
+			name = "Pods-Wallet";
+			productName = "Pods-Wallet";
+			productReference = EB576E7C1A28A1C3E9690D7BFDFA3809 /* Pods_Wallet.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C942A9CCE5CF382E8053D9757DA6249D /* PhoneNumberKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 720331F06C4A8C9AE573877B1A85223D /* Build configuration list for PBXNativeTarget "PhoneNumberKit" */;
+			buildPhases = (
+				7AF8DD4F304DA13F0445DFAD6F7DE47A /* Headers */,
+				870795BB33808D61D061F17DE37F6B19 /* Sources */,
+				05CA58A45C11A4B2B1197EAE0BDACADE /* Frameworks */,
+				CC47C539BA35179285F5A0CA1F87F141 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhoneNumberKit;
+			productName = PhoneNumberKit;
+			productReference = 69681285C13FB58876DD5727BCB2DC85 /* PhoneNumberKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = B26CE67B1A8E08FBD8976FC8E8FF5E95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C942A9CCE5CF382E8053D9757DA6249D /* PhoneNumberKit */,
+				C3D3F5A2C0FBD8B39D3FDB7771CB7757 /* Pods-Wallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7A9F975BC496EF9CB814C975FF7CD6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC47C539BA35179285F5A0CA1F87F141 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C3AAB2DA71133A322B5E94D33D5346 /* PhoneNumberMetadata.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		025BE530E180558BACEF1A7385B444E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5320BA6E49DB015F6F2E7CE74E386D6D /* Pods-Wallet-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870795BB33808D61D061F17DE37F6B19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C86F4F4510AF38D80277349BA2D5FEC /* Constants.swift in Sources */,
+				51EF883340A0C8FC330F91BBC55BFE0D /* Formatter.swift in Sources */,
+				12FE949353A4F5EEAFF43AB5CD9106C0 /* MetadataManager.swift in Sources */,
+				C5B2932C69336A8A391CB20E3774CF02 /* MetadataParsing.swift in Sources */,
+				2925CB7303D2DF99172D37E2E6606CB5 /* MetadataTypes.swift in Sources */,
+				8F7CCA3E406C83FBB5A616981B47A052 /* NSRegularExpression+Swift.swift in Sources */,
+				1EA0B9D7ADC37A73E0D8FD62E3938624 /* ParseManager.swift in Sources */,
+				A2FFAD8FE6A324353976477198DC8E39 /* PartialFormatter.swift in Sources */,
+				3CB048384C3AC927BB7A650762D55D8F /* PhoneNumber.swift in Sources */,
+				030F0BDD1CF27F2E3023053B883AABB0 /* PhoneNumberKit-dummy.m in Sources */,
+				17167C311A45DDEEA06323B986406B5E /* PhoneNumberKit.swift in Sources */,
+				E53CED6EA79D39D54B32FD93816A4571 /* PhoneNumberParser.swift in Sources */,
+				277F77965CC48142F729762B6F4322F8 /* RegexManager.swift in Sources */,
+				FFB66C8E07C73B667E7C6514D52F95E6 /* TextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C20292BC2D960AAA0438C4C77AF7C2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PhoneNumberKit;
+			target = C942A9CCE5CF382E8053D9757DA6249D /* PhoneNumberKit */;
+			targetProxy = 660525A5D4FE8B9555EF0715A24D050C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2E7E31B647CB330CFDDD830A75E09465 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A7300CAE370B4F20A344E66F5283F15 /* Pods-Wallet.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Wallet/Pods-Wallet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Wallet/Pods-Wallet.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3E70162E00A92918383385F4AED42EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 522422F23BBB14613A5261CC1723971F /* PhoneNumberKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PhoneNumberKit/PhoneNumberKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhoneNumberKit/PhoneNumberKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PhoneNumberKit/PhoneNumberKit.modulemap";
+				PRODUCT_MODULE_NAME = PhoneNumberKit;
+				PRODUCT_NAME = PhoneNumberKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		51A95773D74F81A7FDED88680368C68E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 522422F23BBB14613A5261CC1723971F /* PhoneNumberKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PhoneNumberKit/PhoneNumberKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhoneNumberKit/PhoneNumberKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PhoneNumberKit/PhoneNumberKit.modulemap";
+				PRODUCT_MODULE_NAME = PhoneNumberKit;
+				PRODUCT_NAME = PhoneNumberKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B58D077CE6D7B6FEA069934441BFF285 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32F64BC0D4DD98AB99AD25D10CC09D19 /* Pods-Wallet.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Wallet/Pods-Wallet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Wallet/Pods-Wallet.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		720331F06C4A8C9AE573877B1A85223D /* Build configuration list for PBXNativeTarget "PhoneNumberKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51A95773D74F81A7FDED88680368C68E /* Debug */,
+				3E70162E00A92918383385F4AED42EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC19558448E7A0CEBC6C3000BBBC5EF8 /* Build configuration list for PBXNativeTarget "Pods-Wallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E7E31B647CB330CFDDD830A75E09465 /* Debug */,
+				B58D077CE6D7B6FEA069934441BFF285 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
