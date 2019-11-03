@@ -12,6 +12,7 @@
 		6416B8792360F172001C08CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6416B8782360F172001C08CD /* HomeViewController.swift */; };
 		646C6FA52353AE12008A2F80 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C6FA42353AE12008A2F80 /* Api.swift */; };
 		646C6FA92353CCCA008A2F80 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C6FA82353CCCA008A2F80 /* VerificationViewController.swift */; };
+		64E741C2236E68250044F83A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E741C1236E68250044F83A /* AccountViewController.swift */; };
 		A42F0DE82341A32F00A58617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F0DE72341A32F00A58617 /* AppDelegate.swift */; };
 		A42F0DEA2341A32F00A58617 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F0DE92341A32F00A58617 /* SceneDelegate.swift */; };
 		A42F0DEC2341A32F00A58617 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F0DEB2341A32F00A58617 /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		6416B8782360F172001C08CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		646C6FA42353AE12008A2F80 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Api.swift; path = ../Wallet/Api.swift; sourceTree = "<group>"; };
 		646C6FA82353CCCA008A2F80 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		64E741C1236E68250044F83A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A42F0DE42341A32F00A58617 /* Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42F0DE72341A32F00A58617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42F0DE92341A32F00A58617 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				A42F0DEB2341A32F00A58617 /* LoginViewController.swift */,
 				646C6FA82353CCCA008A2F80 /* VerificationViewController.swift */,
 				6416B8782360F172001C08CD /* HomeViewController.swift */,
+				64E741C1236E68250044F83A /* AccountViewController.swift */,
 				A42F0DED2341A32F00A58617 /* Main.storyboard */,
 				A42F0DF02341A33000A58617 /* Assets.xcassets */,
 				A42F0DF22341A33000A58617 /* LaunchScreen.storyboard */,
@@ -237,6 +240,7 @@
 				A42F0DE82341A32F00A58617 /* AppDelegate.swift in Sources */,
 				646C6FA52353AE12008A2F80 /* Api.swift in Sources */,
 				A42F0DEA2341A32F00A58617 /* SceneDelegate.swift in Sources */,
+				64E741C2236E68250044F83A /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -352,7 +352,7 @@
         <!--Account View Controller-->
         <scene sceneID="lLf-TG-nGJ">
             <objects>
-                <viewController id="hh8-vv-Ov2" customClass="AccountViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountView" id="hh8-vv-Ov2" customClass="AccountViewController" customModule="Wallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HW6-g8-1fE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -438,6 +438,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oNM-my-qvu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RJi-s9-pS2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQF-pa-zV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

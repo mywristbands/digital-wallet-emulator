@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource {
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var greeting: UILabel!
     @IBOutlet weak var userNameField: UITextField!
@@ -21,7 +21,9 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         accountsTable.dataSource = self
-        
+        accountsTable.delegate = self
+        accountsTable.allowsSelection = true
+
         // Get user info, then load user's info into wallet and setup view
         Api.user(completion: {(_ response: [String: Any]?, _ error: Api.ApiError?) -> Void in
             if let responseUnwrapped = response {
@@ -54,6 +56,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     // Closes the keyboard upon tapping anywhere on the screen
     @IBAction func onTapAnywhere(_ sender: UITapGestureRecognizer) {
+        sender.delegate = self
         if sender.state == .ended {
             userNameField.resignFirstResponder()
         }
@@ -71,6 +74,12 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         self.present(navigationC, animated: true, completion: nil)
     }
     
+    // MARK: UIGestureRecognizer delegate implementation
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        // Ensures that the UITapGestureRecognizer only recognizes taps in the Home View (not the Table View)
+        return touch.view == gestureRecognizer.view
+    }
+
     // MARK: table view data source implementation
     // This function is called by tableView so that it knows how many rows it should have
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,5 +93,21 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         let accountAmount = String(format: "%0.02f", account.amount)
         cell.textLabel?.text = "\(account.name): $\(accountAmount)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentAccount = self.wallet.accounts[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //It is ok here to use the ! below, since we would always want the app to crash if for some reason we couldn't switch to the HomeView
+        let accountVC = storyboard.instantiateViewController(withIdentifier: "AccountView") as! AccountViewController
+        
+        accountVC.name = currentAccount.name
+        accountVC.ID = currentAccount.ID
+        accountVC.amount = currentAccount.amount
+
+        accountVC.modalPresentationStyle = .fullScreen
+        show(accountVC, sender: self)
+        //presentViewController(accountVC, animated: true, completion: nil)
     }
 }
