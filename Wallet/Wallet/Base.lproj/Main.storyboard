@@ -338,6 +338,7 @@
                         <outlet property="greeting" destination="uJ6-4t-9j2" id="kxu-Za-hNw"/>
                         <outlet property="totalAmount" destination="p0b-cM-PYd" id="5RD-Ok-szD"/>
                         <outlet property="userNameField" destination="ebr-Ea-ywE" id="vNQ-SR-Sr3"/>
+                        <segue destination="hh8-vv-Ov2" kind="presentation" identifier="goToAccountView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="EfD-C9-kri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spS-1r-7kg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -372,6 +373,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehT-un-m3I">
                                 <rect key="frame" x="263" y="20" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="onDone" destination="hh8-vv-Ov2" eventType="touchUpInside" id="ac2-gq-Uks"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ybj-Kk-5DV" userLabel="Transaction Buttons">
                                 <rect key="frame" x="95" y="297" width="130" height="251"/>
@@ -439,10 +443,17 @@
                         <viewLayoutGuide key="safeArea" id="oNM-my-qvu"/>
                     </view>
                     <navigationItem key="navigationItem" id="RJi-s9-pS2"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="Ilf-Ol-eI8" id="Sbc-U5-Qvb"/>
+                        <outlet property="depositButton" destination="XY0-uF-IvW" id="fPK-ld-1ae"/>
+                        <outlet property="transferButton" destination="JYF-VU-3p1" id="5t2-En-tTP"/>
+                        <outlet property="withdrawButton" destination="Yqo-EB-F0z" id="zzm-nc-Cc1"/>
+                        <segue destination="BqO-JO-Ljd" kind="presentation" identifier="goToHomeView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6o3-QZ-d8m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQF-pa-zV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120" y="136.26760563380282"/>
+            <point key="canvasLocation" x="3152" y="135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KcJ-Up-bqh">
@@ -462,4 +473,7 @@
             <point key="canvasLocation" x="1046" y="-535"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6o3-QZ-d8m"/>
+    </inferredMetricsTieBreakers>
 </document>

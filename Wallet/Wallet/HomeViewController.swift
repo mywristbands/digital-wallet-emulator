@@ -97,17 +97,19 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentAccount = self.wallet.accounts[indexPath.row]
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //It is ok here to use the ! below, since we would always want the app to crash if for some reason we couldn't switch to the HomeView
-        let accountVC = storyboard.instantiateViewController(withIdentifier: "AccountView") as! AccountViewController
-        
-        accountVC.name = currentAccount.name
-        accountVC.ID = currentAccount.ID
-        accountVC.amount = currentAccount.amount
-
-        accountVC.modalPresentationStyle = .fullScreen
-        show(accountVC, sender: self)
-        //presentViewController(accountVC, animated: true, completion: nil)
+                
+        performSegue(withIdentifier: "goToAccountView", sender: currentAccount)
     }
+    
+    // Define what variables to pass to VerificationViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let accountVC = segue.destination as? AccountViewController, let account = sender as? Account
+        {
+            accountVC.name = account.name
+            accountVC.ID = account.ID
+            accountVC.amount = account.amount
+        }
+    }
+
 }
