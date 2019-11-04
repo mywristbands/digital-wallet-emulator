@@ -8,13 +8,22 @@
 
 import UIKit
 
+//protocol DisplayViewControllerDelegate : NSObjectProtocol{
+//    func doSomethingWith(data: String)
+//}
+
 class AccountViewController: UIViewController {
 
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    
     @IBOutlet weak var depositButton: UIButton!
     @IBOutlet weak var withdrawButton: UIButton!
     @IBOutlet weak var transferButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    var walletContainingAccount = Wallet.init()
+    var indexInWallet: Int = 0
     var name = ""
     var ID = ""
     var amount: Double = 0
@@ -27,10 +36,17 @@ class AccountViewController: UIViewController {
         for button in buttons {
             button.layer.cornerRadius = button.frame.height / 2
         }
+        accountLabel.text = "\(name)"
+        amountLabel.text = "$\(amount)"
     }
     
     @IBAction func onDone() {
-        performSegue(withIdentifier: "goToHomeView", sender: self)
+        dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func onDelete() {
+        Api.removeAccount(wallet: walletContainingAccount, removeAccountat: indexInWallet, completion: { (_ response: [String: Any]?, _ error: Api.ApiError?) -> Void in
+            self.onDone()
+        })
+    }
 }

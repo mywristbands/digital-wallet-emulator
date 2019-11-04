@@ -15,6 +15,10 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
     @IBOutlet weak var totalAmount: UILabel!
     @IBOutlet weak var accountsTable: UITableView!
     
+    @IBOutlet weak var newAccountPopup: UIView!
+    @IBOutlet weak var newAccountField: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
+    
     var wallet = Wallet.init()
     
     override func viewDidLoad() {
@@ -22,15 +26,18 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
         
         accountsTable.dataSource = self
         accountsTable.delegate = self
-        accountsTable.allowsSelection = true
-
-        // Get user info, then load user's info into wallet and setup view
+        
+        getUserInfoIntoView()
+    }
+    
+    func getUserInfoIntoView() {
         Api.user(completion: {(_ response: [String: Any]?, _ error: Api.ApiError?) -> Void in
             if let responseUnwrapped = response {
-                self.wallet = Wallet.init(data: responseUnwrapped, ifGenerateAccounts: true)
+                self.wallet = Wallet.init(data: responseUnwrapped, ifGenerateAccounts: false)
                 self.displayUsername()
                 self.totalAmount.text = "Your Total Amount: $" + String(format: "%0.02f", self.wallet.totalAmount)
                 self.accountsTable.reloadData()
+                self.setupPopup()
             }
         })
     }
@@ -42,6 +49,31 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
         } else {
             userNameField.text = wallet.userName
         }
+    }
+
+    func setupPopup() {
+        newAccountPopup.layer.shadowColor = UIColor.darkGray.cgColor
+        newAccountPopup.layer.shadowOpacity = 0.7
+        newAccountPopup.layer.shadowOffset = CGSize(width: 3, height: 3)
+        newAccountPopup.layer.shadowRadius = 15.0
+        newAccountPopup.layer.masksToBounds = false
+        
+        newAccountPopup.isHidden = true
+        newAccountPopup.layer.cornerRadius = newAccountPopup.frame.height / 10
+        
+        setPlaceholderText()
+        
+        doneButton.layer.cornerRadius = doneButton.frame.height / 2
+    }
+    func setPlaceholderText() {
+        var potentialNewAccountNumber = 1
+        for account in wallet.accounts {
+            if account.name == "Account \(potentialNewAccountNumber)" {
+                potentialNewAccountNumber += 1
+            }
+            print(account.name)
+        }
+        newAccountField.placeholder = "Account \(potentialNewAccountNumber)"
     }
     
     @IBAction func onUpdateUserName() {
@@ -59,6 +91,34 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
         sender.delegate = self
         if sender.state == .ended {
             userNameField.resignFirstResponder()
+        }
+    }
+    
+    @IBAction func onAddAccount(_ sender: Any) {
+        newAccountPopup.isHidden = false
+        newAccountField.becomeFirstResponder()
+    }
+    
+    @IBAction func onDone() {
+        var newAccountName:String = ""
+        
+        if let defaultAccountName = newAccountField.placeholder {
+            newAccountName = defaultAccountName
+        }
+        if let enteredAccountName = newAccountField.text {
+            if (enteredAccountName != "") {
+                newAccountName = enteredAccountName
+            }
+        }
+        
+        newAccountField.resignFirstResponder()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        Api.addNewAccount(wallet: wallet, newAccountName: newAccountName) {(_ response: [String: Any]?, _ error: Api.ApiError?) -> Void in
+            if error == nil {
+                self.getUserInfoIntoView()
+                self.newAccountPopup.isHidden = true
+                UIApplication.shared.endIgnoringInteractionEvents()
+            }
         }
     }
     
@@ -97,19 +157,22 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentAccount = self.wallet.accounts[indexPath.row]
-                
-        performSegue(withIdentifier: "goToAccountView", sender: currentAccount)
+          
+        goToAccountView(of: currentAccount, locatedAt: indexPath.row)
     }
     
-    // Define what variables to pass to VerificationViewController
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let accountVC = segue.destination as? AccountViewController, let account = sender as? Account
-        {
-            accountVC.name = account.name
-            accountVC.ID = account.ID
-            accountVC.amount = account.amount
-        }
+    func goToAccountView(of account: Account, locatedAt index: Int) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //It is ok here to use the ! below, since we would always want the app to crash if for some reason we couldn't switch to the LoginView
+        let accountVC = storyboard.instantiateViewController(withIdentifier: "AccountView") as! AccountViewController
+        
+        accountVC.modalPresentationStyle = .fullScreen
+        accountVC.name = account.name
+        accountVC.ID = account.ID
+        accountVC.amount = account.amount
+        accountVC.walletContainingAccount = wallet
+        accountVC.indexInWallet = index
+        
+        self.present(accountVC, animated: true, completion: nil)
     }
-
 }

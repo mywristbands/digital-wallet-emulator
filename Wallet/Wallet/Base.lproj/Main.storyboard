@@ -276,6 +276,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Wallet" id="3zh-MK-9X6">
+                                        <barButtonItem key="leftBarButtonItem" title="Add Account" id="LfT-H8-tBU">
+                                            <connections>
+                                                <action selector="onAddAccount:" destination="BqO-JO-Ljd" id="2mE-er-BiU"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Logout" id="YOm-Sh-Huu">
                                             <connections>
                                                 <action selector="onLogout:" destination="BqO-JO-Ljd" id="nMN-m9-boQ"/>
@@ -308,10 +313,53 @@
                                     <action selector="onUpdateUserName" destination="BqO-JO-Ljd" eventType="editingDidEnd" id="OyL-S1-ucE"/>
                                 </connections>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBZ-8E-AvY">
+                                <rect key="frame" x="34.5" y="90" width="251" height="220"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please name your new account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kS0-E5-DKF">
+                                        <rect key="frame" x="8" y="53" width="235" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="1i2-A4-Bqa">
+                                        <rect key="frame" x="8" y="98" width="235" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeU-yI-vnD">
+                                        <rect key="frame" x="91.5" y="153" width="68" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Adh-n8-hpo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="xoE-Vw-N4p"/>
+                                        </constraints>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onDone" destination="BqO-JO-Ljd" eventType="touchUpInside" id="F7U-3s-DtC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="1i2-A4-Bqa" firstAttribute="leading" secondItem="gBZ-8E-AvY" secondAttribute="leading" constant="8" id="3Do-3o-2pS"/>
+                                    <constraint firstItem="GeU-yI-vnD" firstAttribute="top" secondItem="1i2-A4-Bqa" secondAttribute="bottom" constant="21" id="4wO-TR-Uh9"/>
+                                    <constraint firstItem="kS0-E5-DKF" firstAttribute="top" secondItem="gBZ-8E-AvY" secondAttribute="top" constant="53" id="6aP-ga-pva"/>
+                                    <constraint firstAttribute="trailing" secondItem="1i2-A4-Bqa" secondAttribute="trailing" constant="8" id="QNX-jp-HS5"/>
+                                    <constraint firstItem="kS0-E5-DKF" firstAttribute="leading" secondItem="gBZ-8E-AvY" secondAttribute="leading" constant="8" id="X0u-yV-0eM"/>
+                                    <constraint firstAttribute="trailing" secondItem="kS0-E5-DKF" secondAttribute="trailing" constant="8" id="Z7l-JJ-4Oh"/>
+                                    <constraint firstItem="GeU-yI-vnD" firstAttribute="centerX" secondItem="gBZ-8E-AvY" secondAttribute="centerX" id="dik-AM-wGj"/>
+                                    <constraint firstAttribute="height" constant="220" id="p5g-tc-SNS"/>
+                                    <constraint firstItem="1i2-A4-Bqa" firstAttribute="top" secondItem="kS0-E5-DKF" secondAttribute="bottom" constant="18.5" id="t5Y-FT-PeW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="gBZ-8E-AvY" firstAttribute="top" secondItem="5X8-Pb-pbR" secondAttribute="top" constant="90" id="0Xo-Ic-G9a"/>
                             <constraint firstItem="5X8-Pb-pbR" firstAttribute="trailing" secondItem="Zas-iL-Edh" secondAttribute="trailing" id="2OT-sp-dAv"/>
                             <constraint firstItem="ifz-pz-Hbj" firstAttribute="leading" secondItem="5X8-Pb-pbR" secondAttribute="leading" constant="16" id="4gb-rW-yoH"/>
                             <constraint firstItem="5X8-Pb-pbR" firstAttribute="trailing" secondItem="ifz-pz-Hbj" secondAttribute="trailing" constant="16" id="Atx-5J-ujC"/>
@@ -319,9 +367,12 @@
                             <constraint firstItem="ebr-Ea-ywE" firstAttribute="top" secondItem="Zas-iL-Edh" secondAttribute="bottom" constant="30" id="HVQ-Fd-8Fe"/>
                             <constraint firstItem="5X8-Pb-pbR" firstAttribute="bottom" secondItem="ifz-pz-Hbj" secondAttribute="bottom" constant="20" id="I8W-bA-WSN"/>
                             <constraint firstItem="Zas-iL-Edh" firstAttribute="leading" secondItem="5X8-Pb-pbR" secondAttribute="leading" id="Reb-rC-xze"/>
+                            <constraint firstItem="5X8-Pb-pbR" firstAttribute="trailing" secondItem="gBZ-8E-AvY" secondAttribute="trailing" constant="34.5" id="Wh9-gd-Vkp"/>
                             <constraint firstItem="uJ6-4t-9j2" firstAttribute="leading" secondItem="5X8-Pb-pbR" secondAttribute="leading" constant="16" id="YCa-Ql-1qT"/>
                             <constraint firstItem="Zas-iL-Edh" firstAttribute="top" secondItem="5X8-Pb-pbR" secondAttribute="top" id="bDp-Df-jQo"/>
+                            <constraint firstItem="gBZ-8E-AvY" firstAttribute="centerX" secondItem="5X8-Pb-pbR" secondAttribute="centerX" id="f0a-0m-z9A"/>
                             <constraint firstItem="ebr-Ea-ywE" firstAttribute="leading" secondItem="uJ6-4t-9j2" secondAttribute="trailing" constant="7.5" id="hsd-vB-FjD"/>
+                            <constraint firstItem="gBZ-8E-AvY" firstAttribute="leading" secondItem="5X8-Pb-pbR" secondAttribute="leading" constant="34.5" id="iyT-uY-roA"/>
                             <constraint firstItem="5X8-Pb-pbR" firstAttribute="trailing" secondItem="ebr-Ea-ywE" secondAttribute="trailing" constant="16" id="pkM-t6-ADQ"/>
                             <constraint firstItem="p0b-cM-PYd" firstAttribute="centerX" secondItem="5X8-Pb-pbR" secondAttribute="centerX" id="tLF-Bd-bY7"/>
                             <constraint firstItem="p0b-cM-PYd" firstAttribute="top" secondItem="uJ6-4t-9j2" secondAttribute="bottom" constant="18.5" id="u39-YR-7cS"/>
@@ -335,10 +386,12 @@
                     <connections>
                         <outlet property="Greeting" destination="uJ6-4t-9j2" id="PI3-sp-K1S"/>
                         <outlet property="accountsTable" destination="ifz-pz-Hbj" id="dPs-zV-fmc"/>
+                        <outlet property="doneButton" destination="GeU-yI-vnD" id="OFV-Ir-Peh"/>
                         <outlet property="greeting" destination="uJ6-4t-9j2" id="kxu-Za-hNw"/>
+                        <outlet property="newAccountField" destination="1i2-A4-Bqa" id="7MN-3O-K9g"/>
+                        <outlet property="newAccountPopup" destination="gBZ-8E-AvY" id="hEl-nD-zT1"/>
                         <outlet property="totalAmount" destination="p0b-cM-PYd" id="5RD-Ok-szD"/>
                         <outlet property="userNameField" destination="ebr-Ea-ywE" id="vNQ-SR-Sr3"/>
-                        <segue destination="hh8-vv-Ov2" kind="presentation" identifier="goToAccountView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="EfD-C9-kri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spS-1r-7kg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -359,13 +412,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account [x]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-y7-0uZ">
-                                <rect key="frame" x="99.5" y="38" width="121.5" height="26.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <rect key="frame" x="91.5" y="38" width="137.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$(Amount)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LD-UG-Sxc">
-                                <rect key="frame" x="57.5" y="73" width="205.5" height="48"/>
+                                <rect key="frame" x="57.5" y="76.5" width="205.5" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -424,6 +477,9 @@
                                         <state key="normal" title="Delete">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onDelete" destination="hh8-vv-Ov2" eventType="touchUpInside" id="MdP-YG-GSQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -444,11 +500,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="RJi-s9-pS2"/>
                     <connections>
+                        <outlet property="accountLabel" destination="9gR-y7-0uZ" id="dTf-nf-Lqo"/>
+                        <outlet property="amountLabel" destination="9LD-UG-Sxc" id="oeH-h8-0iw"/>
                         <outlet property="deleteButton" destination="Ilf-Ol-eI8" id="Sbc-U5-Qvb"/>
                         <outlet property="depositButton" destination="XY0-uF-IvW" id="fPK-ld-1ae"/>
                         <outlet property="transferButton" destination="JYF-VU-3p1" id="5t2-En-tTP"/>
                         <outlet property="withdrawButton" destination="Yqo-EB-F0z" id="zzm-nc-Cc1"/>
-                        <segue destination="BqO-JO-Ljd" kind="presentation" identifier="goToHomeView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6o3-QZ-d8m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQF-pa-zV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -473,7 +530,4 @@
             <point key="canvasLocation" x="1046" y="-535"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6o3-QZ-d8m"/>
-    </inferredMetricsTieBreakers>
 </document>
