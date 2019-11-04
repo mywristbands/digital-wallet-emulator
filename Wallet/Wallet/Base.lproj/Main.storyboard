@@ -472,6 +472,9 @@
                                         <state key="normal" title="Transfer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTransfer" destination="hh8-vv-Ov2" eventType="touchUpInside" id="Imy-0w-wKG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilf-Ol-eI8">
                                         <rect key="frame" x="0.0" y="201" width="130" height="50"/>
@@ -489,9 +492,53 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cW-yX-k31">
+                                <rect key="frame" x="35" y="76" width="250" height="213"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdq-GA-GXs">
+                                        <rect key="frame" x="8" y="8" width="234" height="83"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="83" id="mpC-Gu-iFb"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-hy-DMO">
+                                        <rect key="frame" x="8" y="99" width="234" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-1I-7qH">
+                                        <rect key="frame" x="91" y="150" width="68" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="8dy-i1-pG6"/>
+                                            <constraint firstAttribute="height" constant="30" id="Pq6-jc-4BZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTransferDone" destination="hh8-vv-Ov2" eventType="touchUpInside" id="cjZ-zv-zyD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Mdq-GA-GXs" secondAttribute="trailing" constant="8" id="DSw-OC-XW6"/>
+                                    <constraint firstItem="Whg-1I-7qH" firstAttribute="centerX" secondItem="8cW-yX-k31" secondAttribute="centerX" id="Jdb-hr-Lo2"/>
+                                    <constraint firstItem="Whg-1I-7qH" firstAttribute="top" secondItem="asJ-hy-DMO" secondAttribute="bottom" constant="17" id="Nf4-yL-RHE"/>
+                                    <constraint firstItem="Mdq-GA-GXs" firstAttribute="leading" secondItem="8cW-yX-k31" secondAttribute="leading" constant="8" id="Vor-Jy-brm"/>
+                                    <constraint firstItem="asJ-hy-DMO" firstAttribute="top" secondItem="Mdq-GA-GXs" secondAttribute="bottom" constant="8" id="XLC-TG-QRG"/>
+                                    <constraint firstItem="Mdq-GA-GXs" firstAttribute="top" secondItem="8cW-yX-k31" secondAttribute="top" constant="8" id="ion-dn-gew"/>
+                                    <constraint firstItem="asJ-hy-DMO" firstAttribute="leading" secondItem="8cW-yX-k31" secondAttribute="leading" constant="8" id="iq2-zC-VEf"/>
+                                    <constraint firstAttribute="trailing" secondItem="asJ-hy-DMO" secondAttribute="trailing" constant="8" id="ox6-HV-5cs"/>
+                                    <constraint firstAttribute="height" constant="213" id="pqk-Vc-59O"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="oNM-my-qvu" firstAttribute="trailing" secondItem="8cW-yX-k31" secondAttribute="trailing" constant="35" id="4IK-KL-Fpd"/>
+                            <constraint firstItem="8cW-yX-k31" firstAttribute="leading" secondItem="oNM-my-qvu" secondAttribute="leading" constant="35" id="7Wj-Y1-BWB"/>
                             <constraint firstItem="Ybj-Kk-5DV" firstAttribute="centerX" secondItem="oNM-my-qvu" secondAttribute="centerX" id="V8G-N7-aM6"/>
                             <constraint firstItem="9LD-UG-Sxc" firstAttribute="top" secondItem="9gR-y7-0uZ" secondAttribute="bottom" constant="8.5" id="VO7-Vl-OFF"/>
                             <constraint firstItem="9LD-UG-Sxc" firstAttribute="centerX" secondItem="oNM-my-qvu" secondAttribute="centerX" id="a29-8A-Abb"/>
@@ -501,22 +548,27 @@
                             <constraint firstItem="9gR-y7-0uZ" firstAttribute="centerX" secondItem="oNM-my-qvu" secondAttribute="centerX" id="rFN-qc-8R3"/>
                             <constraint firstItem="ehT-un-m3I" firstAttribute="leading" secondItem="oNM-my-qvu" secondAttribute="leading" constant="263" id="rcH-jO-IT7"/>
                             <constraint firstItem="oNM-my-qvu" firstAttribute="trailing" secondItem="ehT-un-m3I" secondAttribute="trailing" constant="20" id="sS9-cZ-vvW"/>
+                            <constraint firstItem="8cW-yX-k31" firstAttribute="top" secondItem="oNM-my-qvu" secondAttribute="top" constant="76" id="u3d-Ew-mut"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oNM-my-qvu"/>
                     </view>
                     <navigationItem key="navigationItem" id="RJi-s9-pS2"/>
                     <connections>
                         <outlet property="accountLabel" destination="9gR-y7-0uZ" id="dTf-nf-Lqo"/>
+                        <outlet property="accountPicker" destination="Mdq-GA-GXs" id="OYn-za-68E"/>
                         <outlet property="amountLabel" destination="9LD-UG-Sxc" id="oeH-h8-0iw"/>
                         <outlet property="deleteButton" destination="Ilf-Ol-eI8" id="Sbc-U5-Qvb"/>
                         <outlet property="depositButton" destination="XY0-uF-IvW" id="fPK-ld-1ae"/>
+                        <outlet property="transferAmountField" destination="asJ-hy-DMO" id="zJJ-Zs-Bcl"/>
                         <outlet property="transferButton" destination="JYF-VU-3p1" id="5t2-En-tTP"/>
+                        <outlet property="transferDoneButton" destination="Whg-1I-7qH" id="p45-lw-Jlb"/>
+                        <outlet property="transferPopup" destination="8cW-yX-k31" id="vig-y4-2ZI"/>
                         <outlet property="withdrawButton" destination="Yqo-EB-F0z" id="zzm-nc-Cc1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQF-pa-zV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3152" y="135"/>
+            <point key="canvasLocation" x="3151.875" y="134.1549295774648"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KcJ-Up-bqh">
