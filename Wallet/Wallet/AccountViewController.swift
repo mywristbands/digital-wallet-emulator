@@ -38,7 +38,7 @@ class AccountViewController: UIViewController {
             button.layer.cornerRadius = button.frame.height / 2
         }
         accountLabel.text = "\(name)"
-        amountLabel.text = "$ " + String(format: "%0.02f", amount)
+        amountLabel.text = "$" + String(format: "%0.02f", amount)
     }
     
     @IBAction func onDone() {
@@ -46,7 +46,7 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func onDeposit() {
-        let alert = UIAlertController(title: "How much would you like to deposit", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "How much would you like to deposit?", message: nil, preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Input amount in dollars here···"
@@ -61,8 +61,37 @@ class AccountViewController: UIViewController {
                 depositAmountDouble, completion: { (response, error) in
                     if error == nil {
                         self.homeViewDelegate?.accountsUpdated()
-                        self.amount = self.amount + depositAmountDouble
-                        self.amountLabel.text = "$ " + String(format: "%0.02f", self.amount)
+                        self.amount += depositAmountDouble
+                        self.amountLabel.text = "$" + String(format: "%0.02f", self.amount)
+                    }
+            })
+        }))
+
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func onWithdraw() {
+        let alert = UIAlertController(title: "How much would you like to withdraw?", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Input amount in dollars here···"
+            textField.keyboardType = UIKeyboardType.decimalPad
+            textField.becomeFirstResponder()
+        })
+
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { action in
+            guard let withdrawAmountString = alert.textFields?.first?.text else {return}
+            guard var withdrawAmountDouble = Double(withdrawAmountString) else {return}
+            
+            // Don't let user withdraw more money than they have in their account
+            if withdrawAmountDouble > self.amount {
+                withdrawAmountDouble = self.amount
+            }
+            Api.withdraw(wallet: self.walletContainingAccount, fromAccountAt: self.indexInWallet, amount: withdrawAmountDouble, completion: { (response, error) in
+                    if error == nil {
+                        self.homeViewDelegate?.accountsUpdated()
+                        self.amount -= withdrawAmountDouble
+                        self.amountLabel.text = "$" + String(format: "%0.02f", self.amount)
                     }
             })
         }))

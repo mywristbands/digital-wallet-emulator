@@ -458,6 +458,9 @@
                                         <state key="normal" title="Withdraw">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWithdraw" destination="hh8-vv-Ov2" eventType="touchUpInside" id="xV9-GZ-vLd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYF-VU-3p1">
                                         <rect key="frame" x="0.0" y="134" width="130" height="50"/>
