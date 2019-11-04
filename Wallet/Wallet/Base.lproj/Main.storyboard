@@ -444,6 +444,9 @@
                                         <state key="normal" title="Deposit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onDeposit" destination="hh8-vv-Ov2" eventType="touchUpInside" id="29r-ms-Swe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqo-EB-F0z">
                                         <rect key="frame" x="0.0" y="67" width="130" height="50"/>

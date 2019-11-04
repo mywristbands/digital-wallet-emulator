@@ -144,7 +144,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
     }
     
     // MARK: UpdateHomeViewControllerDelegate implementation
-    func viewDismissed() {
+    func accountsUpdated() {
         getUserInfoIntoView()
     }
     
