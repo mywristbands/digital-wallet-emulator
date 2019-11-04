@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, UpdateHomeViewControllerDelegate {
 
     @IBOutlet weak var greeting: UILabel!
     @IBOutlet weak var userNameField: UITextField!
@@ -66,12 +66,21 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
         doneButton.layer.cornerRadius = doneButton.frame.height / 2
     }
     func setPlaceholderText() {
-        var potentialNewAccountNumber = 1
-        for account in wallet.accounts {
-            if account.name == "Account \(potentialNewAccountNumber)" {
-                potentialNewAccountNumber += 1
+        func isValid(_ accountNumber: Int) -> Bool {
+            for account in wallet.accounts {
+                if account.name == "Account \(accountNumber)" {
+                    return false
+                }
             }
-            print(account.name)
+            return true
+        }
+        
+        var potentialNewAccountNumber = 1
+        while (true) {
+            if(isValid(potentialNewAccountNumber)) {
+                break
+            }
+            potentialNewAccountNumber += 1
         }
         newAccountField.placeholder = "Account \(potentialNewAccountNumber)"
     }
@@ -134,7 +143,12 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
         self.present(navigationC, animated: true, completion: nil)
     }
     
-    // MARK: UIGestureRecognizer delegate implementation
+    // MARK: UpdateHomeViewControllerDelegate implementation
+    func viewDismissed() {
+        getUserInfoIntoView()
+    }
+    
+    // MARK: UIGestureRecognizerDelegate implementation
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         // Ensures that the UITapGestureRecognizer only recognizes taps in the Home View (not the Table View)
         return touch.view == gestureRecognizer.view
@@ -165,6 +179,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         //It is ok here to use the ! below, since we would always want the app to crash if for some reason we couldn't switch to the LoginView
         let accountVC = storyboard.instantiateViewController(withIdentifier: "AccountView") as! AccountViewController
+        accountVC.homeViewDelegate = self //So that Account View can reload Home View
         
         accountVC.modalPresentationStyle = .fullScreen
         accountVC.name = account.name

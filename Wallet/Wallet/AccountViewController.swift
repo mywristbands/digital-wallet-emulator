@@ -8,12 +8,11 @@
 
 import UIKit
 
-//protocol DisplayViewControllerDelegate : NSObjectProtocol{
-//    func doSomethingWith(data: String)
-//}
+protocol UpdateHomeViewControllerDelegate : NSObjectProtocol{
+    func viewDismissed()
+}
 
 class AccountViewController: UIViewController {
-
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
@@ -21,6 +20,8 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var withdrawButton: UIButton!
     @IBOutlet weak var transferButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    
+    var homeViewDelegate: UpdateHomeViewControllerDelegate?
     
     var walletContainingAccount = Wallet.init()
     var indexInWallet: Int = 0
@@ -46,6 +47,7 @@ class AccountViewController: UIViewController {
     
     @IBAction func onDelete() {
         Api.removeAccount(wallet: walletContainingAccount, removeAccountat: indexInWallet, completion: { (_ response: [String: Any]?, _ error: Api.ApiError?) -> Void in
+            self.homeViewDelegate?.viewDismissed()
             self.onDone()
         })
     }
