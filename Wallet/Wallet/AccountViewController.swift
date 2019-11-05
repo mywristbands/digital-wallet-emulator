@@ -60,7 +60,6 @@ class AccountViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             transferPopup.layer.shadowRadius = 15.0
             transferPopup.layer.masksToBounds = false
             
-            transferPopup.isHidden = true
             transferPopup.layer.cornerRadius = transferPopup.frame.height / 10
         }
         func setupPopupInternals() {

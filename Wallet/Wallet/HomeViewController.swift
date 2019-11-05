@@ -58,7 +58,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
         newAccountPopup.layer.shadowRadius = 15.0
         newAccountPopup.layer.masksToBounds = false
         
-        newAccountPopup.isHidden = true
         newAccountPopup.layer.cornerRadius = newAccountPopup.frame.height / 10
         
         setPlaceholderText()
