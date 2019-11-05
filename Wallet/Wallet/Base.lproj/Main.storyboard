@@ -559,6 +559,7 @@
                         <outlet property="amountLabel" destination="9LD-UG-Sxc" id="oeH-h8-0iw"/>
                         <outlet property="deleteButton" destination="Ilf-Ol-eI8" id="Sbc-U5-Qvb"/>
                         <outlet property="depositButton" destination="XY0-uF-IvW" id="fPK-ld-1ae"/>
+                        <outlet property="doneButton" destination="ehT-un-m3I" id="8fu-mk-xIe"/>
                         <outlet property="transferAmountField" destination="asJ-hy-DMO" id="zJJ-Zs-Bcl"/>
                         <outlet property="transferButton" destination="JYF-VU-3p1" id="5t2-En-tTP"/>
                         <outlet property="transferDoneButton" destination="Whg-1I-7qH" id="p45-lw-Jlb"/>

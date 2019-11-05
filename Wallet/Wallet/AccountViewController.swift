@@ -14,6 +14,7 @@ protocol UpdateHomeViewControllerDelegate : NSObjectProtocol{
 
 class AccountViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
@@ -142,6 +143,14 @@ class AccountViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBAction func onTransfer() {
         transferPopup.isHidden = false
         transferAmountField.becomeFirstResponder()
+        toggleInteractionBehindPopup(to: false)
+    }
+    
+    func toggleInteractionBehindPopup(to bool: Bool) {
+        for button in buttons {
+            button.isUserInteractionEnabled = bool
+        }
+        doneButton.isUserInteractionEnabled = bool
     }
     
     @IBAction func onTransferDone() {
@@ -164,6 +173,7 @@ class AccountViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                     self.amount -= transferAmountDouble
                     self.amountLabel.text = "$" + String(format: "%0.02f", self.amount)
                     self.transferPopup.isHidden = true
+                    self.toggleInteractionBehindPopup(to: true)
                     UIApplication.shared.endIgnoringInteractionEvents()
                 }
         })

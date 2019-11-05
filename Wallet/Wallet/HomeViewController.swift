@@ -126,6 +126,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
             if error == nil {
                 self.getUserInfoIntoView()
                 self.newAccountPopup.isHidden = true
+                self.newAccountField.text = "" //Reset field for next time
                 UIApplication.shared.endIgnoringInteractionEvents()
             }
         }
