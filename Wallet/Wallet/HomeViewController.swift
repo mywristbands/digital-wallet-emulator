@@ -178,7 +178,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, UITable
     
     func goToAccountView(of account: Account, locatedAt index: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //It is ok here to use the ! below, since we would always want the app to crash if for some reason we couldn't switch to the LoginView
+        //It is ok here to use the ! below, since we would always want the app to crash if for some reason we couldn't switch to the AccountView
         let accountVC = storyboard.instantiateViewController(withIdentifier: "AccountView") as! AccountViewController
         accountVC.homeViewDelegate = self //So that Account View can reload Home View
         
