@@ -1,4 +1,4 @@
-# Homework4-F19
+# Digital Wallet Emulator
 
 This is an app I created during my iOS Fundamentals course, which allows a user to log in to a fake bank account and deposit and withdraw money.
 
