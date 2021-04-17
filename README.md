@@ -1,6 +1,6 @@
 # Digital Wallet Emulator
 
-This is an app I created during my iOS Fundamentals course, which allows a user to log in to a fake bank account and deposit and withdraw money.
+This is an app I created during my iOS Fundamentals course, which allows a user to log into a fake bank provider, view and edit their accounts, and deposit and withdraw money.
 
 The rest of this README contains word-for-word what I submitted for the original assignment. Essentially, I was asked to explain how the app works in granular detail.
 
